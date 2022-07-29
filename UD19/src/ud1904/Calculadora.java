@@ -67,6 +67,7 @@ public class Calculadora extends JFrame {
 		textFieldRes.setBounds(283, 59, 128, 19);
 		contentPane.add(textFieldRes);
 		textFieldRes.setColumns(10);
+		textFieldRes.setEditable(false);
 		
 		JButton btnSumar = new JButton("Sumar");
 		btnSumar.addActionListener(new ActionListener() {
