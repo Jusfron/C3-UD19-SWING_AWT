@@ -85,6 +85,12 @@ public class Calculadora extends JFrame {
 		JButton btnRestar = new JButton("Restar");
 		btnRestar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Double num1, num2, res;
+				num1 = Double.parseDouble(textFieldOper1.getText());
+				num2 = Double.parseDouble(textFieldOper2.getText());
+				res = num1 - num2;
+				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
+				textFieldRes.setText(Double.toString(res));
 			}
 		});
 		btnRestar.setBounds(251, 110, 96, 32);
