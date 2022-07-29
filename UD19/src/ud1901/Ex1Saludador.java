@@ -22,20 +22,22 @@ public class Ex1Saludador extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setTitle("Saludador");
-
+		contentPane.setLayout(null);
 		// etiqueta
 		JLabel etiqueta = new JLabel("Escribe tu nombre: ");
 		// colocar etiqueta
-		etiqueta.setBounds(150, 150, 380, 250);
+		etiqueta.setBounds(115, 0, 176, 41);
 
 		// añadir etiqueta al panel
 		contentPane.add(etiqueta);
 
 		// input
 		JTextField entradaNombre = new JTextField();
-		entradaNombre.setBounds(120, 120, 50, 150);
+		entradaNombre.setBounds(46, 40, 340, 27);
 		contentPane.add(entradaNombre);
 
+		
+		
 		setContentPane(contentPane);
 	}
 
