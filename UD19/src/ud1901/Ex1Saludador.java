@@ -47,7 +47,7 @@ public class Ex1Saludador extends JFrame {
 
 		//boton 		
 		JButton boton = new JButton("¡Saludar!");
-		boton.setForeground(UIManager.getColor("List.selectionBackground"));
+		boton.setForeground(UIManager.getColor("InternalFrame.inactiveTitleForeground"));
 		boton.setBackground(UIManager.getColor("Label.foreground"));
 		boton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
