@@ -49,6 +49,10 @@ public class Calculadora extends JFrame {
 		lblRes.setBounds(283, 37, 103, 18);
 		contentPane.add(lblRes);
 		
+		JLabel lblHistorico = new JLabel("Histórico: ");
+		lblHistorico.setBounds(92, 240, 255, 23);
+		contentPane.add(lblHistorico);
+		
 		textFieldOper1 = new JTextField();
 		textFieldOper1.setBounds(21, 60, 96, 19);
 		contentPane.add(textFieldOper1);
@@ -68,8 +72,11 @@ public class Calculadora extends JFrame {
 		btnSumar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Double num1, num2, res;
-				num1 = Double.parseDouble();
-				textFieldRes.setText();
+				num1 = Double.parseDouble(textFieldOper1.getText());
+				num2 = Double.parseDouble(textFieldOper2.getText());
+				res = num1 + num2;
+				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
+				textFieldRes.setText(Double.toString(res));
 			}
 		});
 		btnSumar.setBounds(41, 110, 96, 32);
@@ -115,10 +122,6 @@ public class Calculadora extends JFrame {
 		});
 		btnAbout.setBounds(251, 202, 96, 34);
 		contentPane.add(btnAbout);
-		
-		JLabel lblNewLabel = new JLabel("Histórico: ");
-		lblNewLabel.setBounds(92, 240, 255, 23);
-		contentPane.add(lblNewLabel);
 	}
 	
 
