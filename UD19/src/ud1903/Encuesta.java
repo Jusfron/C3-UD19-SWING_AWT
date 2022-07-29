@@ -1,12 +1,8 @@
 package ud1903;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -142,8 +138,4 @@ public class Encuesta extends JFrame {
 		return text;
 	}
 
-	private String sacarHoras() {
-		String text = "";
-		return text;
-	}
 }
