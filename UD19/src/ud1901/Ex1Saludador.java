@@ -3,6 +3,7 @@ package ud1901;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -36,15 +37,17 @@ public class Ex1Saludador extends JFrame {
 		entradaNombre.setBounds(46, 40, 340, 27);
 		contentPane.add(entradaNombre);
 
+		//boton 
 		
+		JButton boton = new JButton("OK");
+		boton.setBounds(151, 89, 117, 25);
+		contentPane.add(boton);
 		
 		setContentPane(contentPane);
+		/*
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(113, 86, 117, 25);
+		contentPane.add(btnNewButton);
+		*/
 	}
-
-	// input
-
-	// boton
-	// accion
-	// resultado accion
-
 }
