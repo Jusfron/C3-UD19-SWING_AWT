@@ -99,24 +99,51 @@ public class Encuesta extends JFrame {
 		JButton ok = new JButton("OK");
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Sistema:  " + sacarTexto()
-						+ "\nEspecialidad: " + "\nHoras dedicadas: ");
+				JOptionPane.showMessageDialog(null,
+						"Sistema:  \n" + sacarTexto() + "\n\nEspecialidad:"
+								+ sacarEspecialidad(chckbxNewCheckBox, chckbxNewCheckBox_1, chckbxNewCheckBox_2)
+								+ "\nHoras dedicadas: " + slider.getValue());
+				setVisible(false);
 			}
 		});
 		ok.setBounds(173, 217, 89, 35);
 		contentPane.add(ok);
 
 	}
-	
-	private String sacarTexto () {
+
+	private String sacarTexto() {
 		Enumeration<AbstractButton> botones = buttonGroup.getElements();
-		String text="";
-		while(botones.hasMoreElements()) {
+		String text = "";
+		while (botones.hasMoreElements()) {
 			AbstractButton boton = botones.nextElement();
-			if(boton.isSelected()) {
+			if (boton.isSelected()) {
 				text = boton.getText();
 			}
 		}
+		return text;
+	}
+
+	private String sacarEspecialidad(JCheckBox chckbxNewCheckBox, JCheckBox chckbxNewCheckBox_1,
+			JCheckBox chckbxNewCheckBox_2) {
+		String text = "\n";
+		if (chckbxNewCheckBox.isSelected()) {
+			text = chckbxNewCheckBox.getText() + "\n";
+		}
+		if (chckbxNewCheckBox_1.isSelected()) {
+			text = text + chckbxNewCheckBox_1.getText() + "\n";
+		}
+		if (chckbxNewCheckBox_2.isSelected()) {
+			text = text + chckbxNewCheckBox_2.getText() + "\n";
+		}
+		if (text.equals("\n")) {
+			text = "no hay especialidad";
+		}
+
+		return text;
+	}
+
+	private String sacarHoras() {
+		String text = "";
 		return text;
 	}
 }
