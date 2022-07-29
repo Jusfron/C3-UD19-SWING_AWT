@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaPeliculas extends JFrame {
 
@@ -36,21 +38,29 @@ public class VentanaPeliculas extends JFrame {
 		contentPane.add(lblEscribeTitulo);
 		
 		textFieldTitulo = new JTextField();
-		textFieldTitulo.setBounds(31, 89, 96, 19);
+		textFieldTitulo.setBounds(31, 89, 152, 19);
 		contentPane.add(textFieldTitulo);
 		textFieldTitulo.setColumns(10);
-		
-		JButton btnAnadir = new JButton("Añadir");
-		btnAnadir.setBounds(42, 139, 85, 21);
-		contentPane.add(btnAnadir);
 		
 		JLabel lblPeliculas = new JLabel("Peliculas");
 		lblPeliculas.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblPeliculas.setBounds(256, 42, 45, 13);
 		contentPane.add(lblPeliculas);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(238, 88, 29, 21);
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.setBounds(238, 88, 161, 28);
 		contentPane.add(comboBox);
+		
+		
+		
+		JButton btnAnadir = new JButton("Añadir");
+		btnAnadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				comboBox.addItem(textFieldTitulo.getText());
+				textFieldTitulo.setText("");
+			}
+		});
+		btnAnadir.setBounds(42, 139, 85, 21);
+		contentPane.add(btnAnadir);
 	}
 }
