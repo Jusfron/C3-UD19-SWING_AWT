@@ -12,11 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JSlider;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Enumeration;
 import java.awt.event.ActionEvent;
 
 public class Encuesta extends JFrame {
@@ -96,12 +99,25 @@ public class Encuesta extends JFrame {
 		JButton ok = new JButton("OK");
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, " "+buttonGroup.getSelection().getSelectedObjects()+"!");
+				JOptionPane.showMessageDialog(null, " "+sacarTexto()+"!");
+				
 			}
 		});
 		ok.setBounds(173, 217, 89, 35);
 		contentPane.add(ok);
 		
 		
+	}
+	
+	private String sacarTexto () {
+		Enumeration<AbstractButton> botones = buttonGroup.getElements();
+		String text="";
+		while(botones.hasMoreElements()) {
+			AbstractButton boton = botones.nextElement();
+			if(boton.isSelected()) {
+				text = boton.getText();
+			}
+		}
+		return text;
 	}
 }
