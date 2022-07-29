@@ -100,6 +100,12 @@ public class Calculadora extends JFrame {
 		JButton btnMult = new JButton("Multiplicar");
 		btnMult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Double num1, num2, res;
+				num1 = Double.parseDouble(textFieldOper1.getText());
+				num2 = Double.parseDouble(textFieldOper2.getText());
+				res = num1 * num2;
+				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
+				textFieldRes.setText(Double.toString(res));
 			}
 		});
 		btnMult.setBounds(41, 152, 96, 32);
