@@ -101,6 +101,12 @@ public class Calculadora extends JFrame {
 		JButton btnDiv = new JButton("Dividir");
 		btnDiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				Double num1, num2, res;
+				num1 = Double.parseDouble(textFieldOper1.getText());
+				num2 = Double.parseDouble(textFieldOper2.getText());
+				res = num1 / num2;
+				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
+				textFieldRes.setText(Double.toString(res));
 			}
 		});
 		btnDiv.setBounds(251, 152, 96, 32);
@@ -109,6 +115,7 @@ public class Calculadora extends JFrame {
 		JButton btnSalir = new JButton("Salir");
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				dispose();
 			}
 		});
 		btnSalir.setBounds(41, 202, 96, 34);
