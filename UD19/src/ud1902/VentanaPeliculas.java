@@ -51,8 +51,6 @@ public class VentanaPeliculas extends JFrame {
 		comboBox.setBounds(238, 88, 161, 28);
 		contentPane.add(comboBox);
 		
-		
-		
 		JButton btnAnadir = new JButton("Añadir");
 		btnAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
