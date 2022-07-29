@@ -69,80 +69,70 @@ public class Calculadora extends JFrame {
 		textFieldRes.setColumns(10);
 		textFieldRes.setEditable(false);
 		
-		JButton btnSumar = new JButton("Sumar");
-		btnSumar.addActionListener(new ActionListener() {
+		ActionListener actList = new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Double num1, num2, res;
+				Double num1, num2, res = 0.0;
 				num1 = Double.parseDouble(textFieldOper1.getText());
 				num2 = Double.parseDouble(textFieldOper2.getText());
-				res = num1 + num2;
+				
+				JButton boton = (JButton)arg0.getSource();
+				switch(boton.getText()) {
+				case "Sumar":
+					res = num1 + num2;
+					break;
+				case "Restar":
+					res = num1 - num2;
+					break;
+				case "Multiplicar":
+					res = num1 * num2;
+					break;
+				case "Dividir":
+					res = num1 / num2;
+					break;
+				case "Salir":
+					dispose();
+					break;
+				case "About":
+					JOptionPane.showMessageDialog(null, "team-5");
+					break;
+				}
 				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
 				textFieldRes.setText(Double.toString(res));
 			}
-		});
+		};
+		
+		JButton btnSumar = new JButton("Sumar");
+		btnSumar.addActionListener(actList);
 		btnSumar.setBounds(41, 110, 96, 32);
 		contentPane.add(btnSumar);
 		
 		JButton btnRestar = new JButton("Restar");
-		btnRestar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Double num1, num2, res;
-				num1 = Double.parseDouble(textFieldOper1.getText());
-				num2 = Double.parseDouble(textFieldOper2.getText());
-				res = num1 - num2;
-				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
-				textFieldRes.setText(Double.toString(res));
-			}
-		});
+		btnRestar.addActionListener(actList);
 		btnRestar.setBounds(251, 110, 96, 32);
 		contentPane.add(btnRestar);
 		
 		JButton btnMult = new JButton("Multiplicar");
-		btnMult.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Double num1, num2, res;
-				num1 = Double.parseDouble(textFieldOper1.getText());
-				num2 = Double.parseDouble(textFieldOper2.getText());
-				res = num1 * num2;
-				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
-				textFieldRes.setText(Double.toString(res));
-			}
-		});
+		btnMult.addActionListener(actList);
 		btnMult.setBounds(41, 152, 96, 32);
 		contentPane.add(btnMult);
 		
 		JButton btnDiv = new JButton("Dividir");
-		btnDiv.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Double num1, num2, res;
-				num1 = Double.parseDouble(textFieldOper1.getText());
-				num2 = Double.parseDouble(textFieldOper2.getText());
-				res = num1 / num2;
-				lblHistorico.setText(lblHistorico.getText()+" "+textFieldRes.getText());
-				textFieldRes.setText(Double.toString(res));
-			}
-		});
+		btnDiv.addActionListener(actList);
 		btnDiv.setBounds(251, 152, 96, 32);
 		contentPane.add(btnDiv);
 		
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				dispose();
-			}
-		});
+		btnSalir.addActionListener(actList);
 		btnSalir.setBounds(41, 202, 96, 34);
 		contentPane.add(btnSalir);
 		
 		JButton btnAbout = new JButton("About");
-		btnAbout.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "team-5");
-			}
-		});
+		btnAbout.addActionListener(actList);
 		btnAbout.setBounds(251, 202, 96, 34);
 		contentPane.add(btnAbout);
 	}
+	
+	
 	
 
 }
